@@ -1,0 +1,20 @@
+services:
+  semantic_scan_matching:
+    build: .
+    image: semantic_scan_matching
+    network_mode: host
+    ipc: host
+    volumes:
+      - ./src:/workspace
+      - ./data:/data
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: cdi
+              device_ids:
+                - nvidia.com/gpu=all
+              capabilities: [gpu]
