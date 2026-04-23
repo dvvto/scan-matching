@@ -70,6 +70,10 @@ RUN git clone --depth 1 https://github.com/microsoft/Swin3D.git /opt/Swin3D \
 
 RUN git clone --depth 1 https://github.com/Yukichiii/Swin3D_Task.git /opt/Swin3D_Task
 
+# ---- SalsaNext ----
+
+RUN git clone --depth 1 https://github.com/TiagoCortinhal/SalsaNext.git /tmp/SalsaNext
+
 # ---- gdown for downloading weights ----
 
 RUN pip install --no-cache-dir gdown
